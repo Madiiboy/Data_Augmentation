@@ -5,7 +5,7 @@ import imutils
 import os
 import numpy as np
 
-AMOUNT = 1
+AMOUNT = 100
 CROP_SIZE = 256
 IMG_NAME = 'snow'
 FILE_NAME = 'snow.png'
@@ -37,7 +37,7 @@ def rotateAll():
         img_name = img_name[:-4]    #Strip file ending from filename
     
         # loop over the rotation angles
-        rotation = 90
+        rotation = 90 #Degrees
         for i in range(1,4):
             rotated = np.rot90(image,i)
             cv2.imwrite(f"reshaped/{img_name}_{rotation}.png", rotated)
