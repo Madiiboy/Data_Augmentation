@@ -3,6 +3,7 @@ import random
 import argparse
 import imutils
 import os
+import numpy as np
 
 AMOUNT = 1
 CROP_SIZE = 256
@@ -37,8 +38,8 @@ def rotateAll():
     
         # loop over the rotation angles
         rotation = 90
-        for angle in range(90, 360, 90):
-            rotated = imutils.rotate(image, angle)
+        for i in range(1,4):
+            rotated = np.rot90(image,i)
             cv2.imwrite(f"reshaped/{img_name}_{rotation}.png", rotated)
             rotation += 90
 
